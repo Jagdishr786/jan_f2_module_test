@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coupon</title>
+</head>
+<style>
+  .img{
+    display: block;
+  width: 400px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%
+  }
+  
+</style>
+<body>
+    <div id="container">
+<h3>Your coupon is </h3>
+
+<img class="img" src="./cong.jpg">
+
+    </div>
+
+
+
+    <script>
+
+        let container = document.getElementById("container")
+
+function generateToken(){
+             let capital_digit = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" 
+             let small_digit = "abcdefghijklmnopqrstuvwxyz" 
+             let number = "0123456789" 
+             let special = "!@#$%^&*()_+" 
+
+             let characters = capital_digit + small_digit + number + special
+
+             let token = ""
+             for(let i=0; i<10; i++){
+                 let random = Math.floor(Math.random()*characters.length) 
+                 token = token + characters[random]
+             }
+                return token 
+          }
+
+          let div = document.createElement('div');
+          div.innerHTML = generateToken()
+          container.appendChild(div);
+
+         
+          
+    </script>
+</body>
+</html>

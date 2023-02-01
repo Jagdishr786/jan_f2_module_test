@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+.image{
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+</style>
+<body>
+    <div class="container">
+       <h1>Click on below  dice three times to get you score </h1>
+    </div>
+
+        <img id="dice" class="image" src="./dice.jpg" alt="dice">
+    
+
+     
+</body>
+
+
+
+
+
+
+
+<script>
+
+
+
+
+  let rolls = 0;
+  let sum = 0;
+  const dice = document.getElementById("dice");
+  
+  dice.addEventListener("click", function() {
+    if (rolls >=3) {
+      return;
+    }
+
+
+    const roll = Math.floor(Math.random() * 6) + 1;
+    alert(`You got ${roll} click again`)
+    rolls += 1;
+  
+    sum += roll;
+
+    
+
+    if (rolls === 3 && sum <= 10) {
+      alert("Sorry, you need to score more than 10. Try again.");
+      rolls = 0;
+      sum = 0;
+    } else if (rolls === 3) {
+      alert("You scored " + sum + "! You win.");
+      rolls = 0;
+      sum = 0;
+    }
+
+   
+  });
+</script>
+
+
+
+
+
+</html>
